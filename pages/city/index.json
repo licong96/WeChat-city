@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择城市",
+  "usingComponents": {
+    "city-selector": "/components/city-selector/index"
+  }
+}

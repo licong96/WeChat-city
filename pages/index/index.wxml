@@ -1,13 +1,7 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+<view class="city" bindtap="bindOpenCity">
+  <view class="city__title">选择城市：</view>
+  <view class="city__text {{cityData.CityName ? 'active' : ''}}">
+    {{cityData.CityName ? cityData.CityName : '请选择城市'}}
+    <text class="iconfont icon-jiantou2 city__arrow"></text>
   </view>
 </view>

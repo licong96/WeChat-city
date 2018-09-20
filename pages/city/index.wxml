@@ -1,0 +1,5 @@
+
+<view class="full-page">
+  <city-selector bindselect="bindCitySelector" />
+</view>
+

@@ -1,0 +1,45 @@
+<view class="top">
+  <view class="top__city">
+    <text class="iconfont icon-dingwei top__icon-city"></text>
+    <text class="top__city-name">{{userInfo.city}}</text>
+    <text class="iconfont icon-fanhui icon-arrow"></text>
+  </view>
+  <view class="top__search">
+    <search height="110rpx" bindquery="bindQuery" placeholder="搜索城市"></search>
+  </view>
+</view>
+<view class="location" bindtap="bindLocation">
+  <text class="iconfont icon-dingwei top__icon-city"></text>
+  <text class="location__desc">当前定位城市</text>
+  <text class="location__text" hidden="{{!userInfo.city}}">{{userInfo.city}}</text>
+</view>
+<view class="select">
+  <scroll-view class="scroll-box" scroll-y style="height: 100%;" scroll-into-view="{{scrollTitle}}" scroll-with-animation="{{scrollAnim}}">
+    <view class="select-list" wx:for="{{map}}" wx:key="{{index}}" id="{{item.title}}" bindtap="bindClick">
+      <text class="select-list__title">{{item.title}}</text>
+      <text 
+        class="select-list__text" 
+        wx:for="{{item.items}}" 
+        wx:key="index" 
+        data-name="{{item.name}}" 
+        data-id="{{item.id}}"
+      >{{item.name}}</text>
+    </view>
+    <view class="empty" wx:if="{{!map.length && loading}}">
+      <text class="iconfont icon-kong empty__icon"></text>
+      <text class="empty__desc">暂无数据</text>
+    </view>
+  </scroll-view>
+</view>
+<view class="nav">
+  <view class="nav-content" id="navSide" catchtouchstart="catchNavStart" catchtouchmove="catchNavMove">
+    <text 
+      class="nav-content__list" 
+      wx:for="{{map}}" 
+      wx:key="{{index}}"
+      data-title="{{item.title}}"
+      >{{item.title}}</text>
+  </view>
+</view>
+
+<view class="nav-show" hidden="{{!scrollNavShow}}">{{scrollTitle}}</view>
