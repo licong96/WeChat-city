@@ -4,4 +4,4 @@
 ![效果][1]
 
 
-[1]: https://licong96.github.io/lib/image/gif/WeChat-city.gif
+[1]: https://licong96.github.io/libs/image/gif/WeChat-city.gif
